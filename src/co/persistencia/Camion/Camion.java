@@ -3,17 +3,15 @@ package co.persistencia.Camion;
 
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 //Anotaciones
+
 @Entity
 @Table (name="camion")
-
 //Mapeo Completo %-&
 public class Camion implements Serializable{
 	
@@ -23,13 +21,17 @@ public class Camion implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	//Encapsulamineto PLAY EN OBJECT JAVA OBJECT Pollo 
-	//Arriba de cada propiedad ira la anotacion
 	
+	
+	//Arriba de cada propiedad ira la anotacion
+	//No necesariamente. Puede ser arriba de cada getter.
 	
 	@Id 
 	@Column (name= "id")
 	private int id;
 	//Si ubiera llave compuesta se agrega dos Id
+	//FALSO: Para llaves compuestas se agrega una clase interna,
+	//o una clase externa privada.
 	
 	@Column(name="matricula")
 	private String matricula;
@@ -53,10 +55,8 @@ public class Camion implements Serializable{
 	public Camion( String matricula,double moldelo, String equipo , double potencia){
 		 super(); //Referencia al  clase padre ya que las clases siempre heredan de Object
 	
-	this.matricula = matricula;
-	this.modelo = modelo;
-	this.tipo = tipo;
-	this.potencia = potencia;
+		 this.matricula = matricula;
+		 this.potencia = potencia;
 	}
 	
 	
