@@ -13,7 +13,7 @@
     <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.show_sql">true</property>
     <!--Mapeo por anotaciones  -->
-    <mapping class ="co.persistencia.Camion.Camion"/> 
+    <mapping class ="co.persistencia.entity.Camion"/> 
 
     </session-factory>
  
