@@ -1,4 +1,4 @@
-package co.persistencia;
+package co.persistencia.test;
 
 
 import java.util.List;
@@ -7,9 +7,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import co.persistencia.Camion.Camion;
-import org.hibernate.service.ServiceRegistry;
 
+import co.persistencia.entity.Camion;
+
+import org.hibernate.service.ServiceRegistry;
 import org.hibernate.Query;
 
 public class Principal {

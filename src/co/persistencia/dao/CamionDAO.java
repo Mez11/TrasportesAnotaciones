@@ -1,4 +1,4 @@
-package co.persistencia.Camion;
+package co.persistencia.dao;
 
 
 import java.util.HashMap;
@@ -8,6 +8,8 @@ import java.util.Map;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
+
+import co.persistencia.entity.Camion;
 
 public class CamionDAO {
 	public void insertar (Camion camion, Session session){
