@@ -25,11 +25,11 @@ public class Principal2 {
 		
 		Provincia provincia = new Provincia("QR","Queretaro");
 		Camionero camionero = new Camionero("123mdc","Tlaxacal","4564345",10000);
-		List<Paquete> paquetes = new ArrayList<> ();
+		List<Paquete> paquetes = new ArrayList<Paquete> ();
 		
 		
 		paquetes.add(new Paquete("A001","Laptop Acer",
-				"Julio Pacheco ","direccion de julio",camionero,provincia);
+				"Julio Pacheco ","direccion de julio",camionero,provincia));
 		
 		paquetes.add(new Paquete("B001","gafas de sol",
 				"Carla Mora","direccion de carla",camionero ,provincia));
@@ -38,10 +38,12 @@ public class Principal2 {
 		Paquete paquete = new  Paquete();
 		paquete.setCamionero(camionero);
 		paquete.setProvincia(provincia);
-		paquete.setDescricion(descricion);
-		paquete.setCodigo(codigo);
-		paquete.setDestinatario(destinatario);
-		paquete.setId(id);
+		paquete.setDescricion("Direccion de Julio @.@.");
+		paquete.setCodigo("3452");
+		paquete.setDestinatario("Sandra");
+		
+		paquetes.add();
+		//paquete.setId("1");
 		
 		
 		
