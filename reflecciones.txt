@@ -1,0 +1,5 @@
+****¿Qué es un Bean?
+Un Bean es una clase de java que cumple con las siguientes características:
+1.-Tiene atributos privados que son accesibles a través de métodos setters y getters públicos
+2.-Implementa la interfaz serializable
+3.-Tiene un constructor vacío
