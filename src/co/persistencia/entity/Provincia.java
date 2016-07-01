@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 
-@Table(name ="Provincia")
+@Table(name ="provincia")
 
 
 public class Provincia {

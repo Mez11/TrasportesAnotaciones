@@ -37,7 +37,6 @@ public class Paquete implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "id_camionero")
-    @Column(name ="id_camionero")
     private Camionero camionero;
   
 	//Relaciones
