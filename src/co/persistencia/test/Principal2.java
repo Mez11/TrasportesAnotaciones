@@ -29,10 +29,20 @@ public class Principal2 {
 		
 		
 		paquetes.add(new Paquete("A001","Laptop Acer",
-				"Julio Pacheco ","direccion de julio",provincia,camionero));
+				"Julio Pacheco ","direccion de julio",camionero,provincia);
 		
 		paquetes.add(new Paquete("B001","gafas de sol",
-				"Carla Mora","direccion de carla",provincia,camionero));
+				"Carla Mora","direccion de carla",camionero ,provincia));
+		
+		//Creando un obj auxiliar
+		Paquete paquete = new  Paquete("A001","Laptop Acer",
+				"Julio Pacheco ","direccion de julio",camionero,provincia);
+		
+		paquete.setId_camionero(camionero);
+		paquete.setProvincia(provincia);
+		
+		
+		
 		
 		
 		//Este fue con lo que compare 

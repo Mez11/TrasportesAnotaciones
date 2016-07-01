@@ -31,6 +31,7 @@ public class Provincia {
 	@OneToMany (cascade = CascadeType.ALL)
 	@JoinColumn (name ="id_provincia")
 	@IndexColumn (name ="id")
+	
 	private List<Paquete> paquetes; 
 	
 	
