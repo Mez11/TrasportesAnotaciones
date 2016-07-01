@@ -80,4 +80,11 @@ public class Provincia {
 		
 		
 	}
+
+
+
+	public void setPaquetes(List<Paquete> paquetes2) {
+		// TODO Auto-generated method stub
+		
+	}
 }

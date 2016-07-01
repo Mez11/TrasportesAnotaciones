@@ -35,11 +35,18 @@ public class Principal2 {
 				"Carla Mora","direccion de carla",camionero ,provincia));
 		
 		//Creando un obj auxiliar
-		Paquete paquete = new  Paquete("A001","Laptop Acer",
-				"Julio Pacheco ","direccion de julio",camionero,provincia);
-		
-		paquete.setId_camionero(camionero);
+		Paquete paquete = new  Paquete();
+		paquete.setCamionero(camionero);
 		paquete.setProvincia(provincia);
+		paquete.setDescricion(descricion);
+		paquete.setCodigo(codigo);
+		paquete.setDestinatario(destinatario);
+		paquete.setId(id);
+		
+		
+		
+		//paquete.setId_camionero(camionero);
+		//paquete.setProvincia(provincia);
 		
 		
 		
