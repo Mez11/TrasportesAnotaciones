@@ -27,6 +27,53 @@ public class Paquete {
 	@Column(name ="direccion_destinatario")
 	private String direccionDestinatario;
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getDescricion() {
+		return descricion;
+	}
+
+	public void setDescricion(String descricion) {
+		this.descricion = descricion;
+	}
+
+	public String getDestinatario() {
+		return destinatario;
+	}
+
+	public void setDestinatario(String destinatario) {
+		this.destinatario = destinatario;
+	}
+
+	public String getDireccionDestinatario() {
+		return direccionDestinatario;
+	}
+
+	public void setDireccionDestinatario(String direccionDestinatario) {
+		this.direccionDestinatario = direccionDestinatario;
+	}
+
+	public Camionero getCamionero() {
+		return camionero;
+	}
+
+	public void setCamionero(Camionero camionero) {
+		this.camionero = camionero;
+	}
 	@ManyToOne
 	@JoinColumn(name = "id_camionero")
     @Column(name ="id_camionero")
@@ -45,6 +92,7 @@ public class Paquete {
 		this.direccionDestinatario = direccion_destinatario;
 		this.camionero = camionero;
 		this.provincia = provincia;
+		
 	}
 	
 	public Provincia getProvincia() {
