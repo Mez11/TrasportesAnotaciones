@@ -42,7 +42,7 @@ public class Principal2 {
 		paquete.setCodigo("3452");
 		paquete.setDestinatario("Sandra");
 		
-		paquetes.add();
+		paquetes.add(paquete);
 		//paquete.setId("1");
 		
 		
