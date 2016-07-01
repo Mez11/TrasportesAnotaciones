@@ -18,10 +18,6 @@ public class Paquete implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	
-	Paquete (){
-		
-	}
 	@Id
 	@Column(name="id")
 	private int id;
@@ -48,6 +44,10 @@ public class Paquete implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "id_provincia")
 	private Provincia provincia;
+	
+	public Paquete (){
+		//do nothing
+	}
 	
 	public Paquete( String codigo, String descricion, String destinatario, String direccion_destinatario,
 			Camionero camionero, Provincia provincia) {
