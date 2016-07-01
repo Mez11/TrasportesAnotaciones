@@ -72,8 +72,11 @@ public class Provincia {
 	
 	public Provincia( String codigo, String nombre) {
 		super();
-		this.id = id;
+		//this.id = id;
 		this.codigo = codigo;
 		this.nombre = nombre;
+	
+		
+		
 	}
 }

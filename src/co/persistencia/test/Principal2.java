@@ -34,6 +34,12 @@ public class Principal2 {
 		paquetes.add(new Paquete("B001","gafas de sol",
 				"Carla Mora","direccion de carla",provincia,camionero));
 		
+		
+		//Este fue con lo que compare 
+		//String codigo, String descricion, String destinatario, String direccion_destinatario,
+		//Camionero id_camionero, Provincia provincia
+		
+		
 		provincia.setPaquetes(paquetes);
 		camionero.setPaquetes(paquetes);
 		

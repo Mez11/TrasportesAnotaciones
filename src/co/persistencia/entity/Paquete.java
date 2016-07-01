@@ -1,18 +1,34 @@
 package co.persistencia.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
+import javax.persistence.OneToMany;
 //import org.hibernate.annotations.Table;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.IndexColumn;
 
 @Entity
 @Table (name ="paquete")
 public class Paquete {
 	
+	public Paquete( String codigo, String descricion, String destinatario, String direccion_destinatario,
+			Camionero id_camionero, Provincia provincia) {
+		super();
+		
+		this.codigo = codigo;
+		this.descricion = descricion;
+		this.destinatario = destinatario;
+		this.direccion_destinatario = direccion_destinatario;
+		this.id_camionero = id_camionero;
+		this.provincia = provincia;
+	}
 	@Id
 	@Column(name="id")
 	private int id;
@@ -51,34 +67,10 @@ public class Paquete {
 	public void setProvincia(Provincia provincia) {
 		this.provincia = provincia;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getCodigo() {
-		return codigo;
-	}
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
-	}
-	public String getDescricion() {
-		return descricion;
-	}
-	public void setDescricion(String descricion) {
-		this.descricion = descricion;
-	}
-	public String getDestinatario() {
-		return destinatario;
-	}
-	public void setDestinatario(String destinatario) {
-		this.destinatario = destinatario;
-	}
-	public String getDireccion_destinatario() {
-		return direccion_destinatario;
-	}
-	public void setDireccion_destinatario(String direccion_destinatario) {
-		this.direccion_destinatario = direccion_destinatario;
-	}
 }
+
+	
+	
+	
+	
+
