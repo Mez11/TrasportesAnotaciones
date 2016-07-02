@@ -7,8 +7,10 @@
     <!-- Mapeo de datos para establecer connecion @.@. -->
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property> <!-- Driver BD  y acceso a al carpeta del paquete--> 
     <property name="connection.url">jdbc:mysql://localhost:3306/transportesys</property><!-- URL --><!--Nombre de la BD  y el puerto y nombre BD-->
+    
     <property name="connection.username">root</property><!-- Usuario y contraseña -->
-    <property name="connection.password">123</property>
+    <!--  tu muy bien -->
+    <property name="connection.password">interpol11</property>
     <!--Depende del dialecto de BD 1que se trabaje -->
     <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.show_sql">true</property>

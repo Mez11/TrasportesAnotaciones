@@ -1,24 +1,34 @@
 package co.persistencia.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-
+import javax.annotation.Generated;
 import javax.persistence.CascadeType;
 import org.hibernate.annotations.IndexColumn;
 import javax.persistence.Table;
 
 @Entity
 
+
 @Table(name ="provincia")
 
 
-public class Provincia {
+public class Provincia  implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY) //Lo tomara para auto incrementable  insertar  los objetos 
 	@Column(name="id")
 	private int id;
 	
@@ -30,8 +40,7 @@ public class Provincia {
 	
 	@OneToMany (cascade = CascadeType.ALL)
 	@JoinColumn (name ="id_provincia")
-	@IndexColumn (name ="id")
-	
+	//@IndexColumn (name ="id")
 	private List<Paquete> paquetes; 
 	
 	

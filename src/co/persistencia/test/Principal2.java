@@ -19,30 +19,39 @@ public class Principal2 {
 		Configuration configuration = new Configuration();
 		configuration.configure();
 		sessionFactory = configuration.buildSessionFactory();
-		//mETODO save guarda datos para la base de datos
+		//METODO save guarda datos para la base de datos
 		Session session = sessionFactory.openSession();
 		
 		
-		Provincia provincia = new Provincia("QR","Queretaro");
-		Camionero camionero = new Camionero("123mdc","Tlaxacal","4564345",10000);
+		Provincia provincia = new Provincia("QR1","Queretaro1");
+		
+		Camionero camionero = new Camionero("uno","Tlaxcala", "23 33 44 56 ", 10000, "Pueblo","nada");
 		List<Paquete> paquetes = new ArrayList<Paquete> ();
 		
 		
-		paquetes.add(new Paquete("A001","Laptop Acer",
+	paquetes.add(new Paquete("A001","Laptop Acer",
 				"Julio Pacheco ","direccion de julio",camionero,provincia));
-		
-		paquetes.add(new Paquete("B001","gafas de sol",
+	
+	paquetes.add(new Paquete("B001","gafas de sol",
 				"Carla Mora","direccion de carla",camionero ,provincia));
 		
 		//Creando un obj auxiliar
-		Paquete paquete = new  Paquete();
+	/*	Paquete paquete = new  Paquete();
 		paquete.setCamionero(camionero);
 		paquete.setProvincia(provincia);
 		paquete.setDescricion("Direccion de Julio @.@.");
 		paquete.setCodigo("3452");
-		paquete.setDestinatario("Sandra");
+		paquete.setDestinatario("Sandra");*/
 		
-		paquetes.add(paquete);
+		/*Paquete paquete2 = new  Paquete();
+		paquete.setCamionero(camionero);
+		paquete.setProvincia(provincia);
+		paquete.setDescricion("Direccion de Julio @.@.");
+		paquete.setCodigo("3452");
+		paquete.setDestinatario("Sandra");*/
+		
+		//paquetes.add(paquete);
+		//paquetes.add(paquete2);
 		//paquete.setId("1");
 		
 		
@@ -65,6 +74,7 @@ public class Principal2 {
 		
 		session.beginTransaction();
 		session.save(provincia);
+		session.save(camionero);
 		session.getTransaction().commit();
 		session.close();
 		sessionFactory.close();

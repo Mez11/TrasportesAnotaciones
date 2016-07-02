@@ -19,8 +19,34 @@ import org.hibernate.annotations.*;
 
 public class Camionero {
 	@Id
+	@GeneratedValue (strategy =GenerationType.IDENTITY)
     @Column(name="id")
 	private int id;
+	
+	
+	@Column(name="dni")
+	private String dni;
+    
+    @Column(name="nombre")
+	private String nombre;
+    
+    @Column(name="direccion")
+    private String direccion;
+    
+    @Column(name="salario")
+  	private double salario;
+      
+
+    @Column(name="poblacion")
+
+    private String poblacion;
+    
+    @Column(name="telefono")
+	private String telefono;
+    
+  
+	
+	
 	
 	public int getId() {
 		return id;
@@ -51,17 +77,8 @@ public class Camionero {
 		this.nombre = nombre;
 	}
 
-
-	public String getTelefono() {
-		return telefono;
-	}
-
-
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	}
-
-
+	
+	
 	public double getSalario() {
 		return salario;
 	}
@@ -70,23 +87,41 @@ public class Camionero {
 	public void setSalario(double salario) {
 		this.salario = salario;
 	}
+	
+	
+	public String getDireccion() {
+		return direccion;
+	}
 
 
-	@Column(name="dni")
-	private String dni;
-    
-    @Column(name="nombre")
-	private String nombre;
-    
-    @Column(name="telefono")
-	private String telefono;
-    
-    @Column(name="salario")
-	private double salario;
-    
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+    public String getPoblacion() {
+		return poblacion;
+	}
+
+
+	public void setPoblacion(String poblacion) {
+		this.poblacion = poblacion;
+	}
+	
+	public String getTelefono() {
+		return telefono;
+	}
+
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+	
+	
+	
+	
 	@OneToMany (cascade = CascadeType.ALL)
 	@JoinColumn (name ="id_camionero")
-	@IndexColumn (name ="id")
+	//@IndexColumn (name ="id")
 	private List<Paquete> paquetes;
     
     public List<Paquete> getPaquetes() {
@@ -99,12 +134,21 @@ public class Camionero {
 	}
 
 
-	public Camionero( String dni, String nombre, String telefono, double salario) {
-  		super();
-  		//this.id = id;
-  		this.dni = dni;
-  		this.nombre = nombre;
-  		this.telefono = telefono;
-  		this.salario = salario;
-  	}
+	public Camionero( String dni, String nombre, String telefono, double salario, String poblacion,
+			String direccion) {
+		super();
+		//this.id = id;
+		this.dni = dni;
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.salario = salario;
+		this.poblacion = poblacion;
+		this.telefono = telefono;
+		
+		
+		
+		
+	}
+
+
 }
