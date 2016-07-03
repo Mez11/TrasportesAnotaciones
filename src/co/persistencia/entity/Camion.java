@@ -33,6 +33,9 @@ public class Camion implements Serializable{
 	//FALSO: Para llaves compuestas se agrega una clase interna,
 	//o una clase externa privada.
 	
+	@Column (name ="tipo")
+	private String tipo;
+	
 	@Column(name="matricula")
 	private String matricula;
 	
@@ -40,8 +43,7 @@ public class Camion implements Serializable{
 	@Column (name="modelo")
 	private double modelo;
 	
-	@Column (name ="tipo")
-	private String tipo;
+	
 	
 	@Column (name="potencia")
 	private double potencia;
@@ -52,9 +54,12 @@ public class Camion implements Serializable{
 	public Camion(){
 		
 	}
-	public Camion( String matricula,double moldelo, String equipo , double potencia){
-		 super(); //Referencia al  clase padre ya que las clases siempre heredan de Object
 	
+	public Camion( int id ){
+		this.id = id;
+	}
+	
+	public Camion( String matricula,double moldelo, String equipo , double potencia){
 		 this.matricula = matricula;
 		 this.potencia = potencia;
 	}
@@ -99,6 +104,12 @@ public class Camion implements Serializable{
 
 	public void setPotencia(Double potencia) {
 		this.potencia = potencia;
+	}
+
+	@Override
+	public String toString() {
+		return "Camion [id=" + id + ", tipo=" + tipo + ", matricula=" + matricula + ", modelo=" + modelo + ", potencia="
+				+ potencia + "]";
 	}
 	
 	

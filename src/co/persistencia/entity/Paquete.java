@@ -21,15 +21,16 @@ public class Paquete implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY) //Lo tomara para auto incrementable 
+	//IDENTITY si
+	@GeneratedValue(strategy=GenerationType.IDENTITY) //Si usar. Lo tomara para auto incrementable.
 	@Column(name="id")
 	private int id;
 		
 	@Column(name ="codigo")
 	private String codigo;
 	
-	@Column(name ="descricion")
-	private String descricion;
+	@Column
+	private String descripcion;
 	
 	@Column(name ="destinatario")
 	private String destinatario;
@@ -39,12 +40,12 @@ public class Paquete implements Serializable {
 	
 	
 	@ManyToOne
-	@JoinColumn(name = "id_camionero")
-    private Camionero camionero;
+	@JoinColumn(name = "camion_camionero_id")
+    private CamionCamionero camionCamionero;
   
 	//Relaciones
 	@ManyToOne
-	@JoinColumn(name = "id_provincia")
+	@JoinColumn(name = "provincia_id")
 	private Provincia provincia;
 	
 	public Paquete (){
@@ -52,12 +53,12 @@ public class Paquete implements Serializable {
 	}
 	
 	public Paquete( String codigo, String descricion, String destinatario, String direccion_destinatario,
-			Camionero camionero, Provincia provincia) {
+			CamionCamionero camionero, Provincia provincia) {
 		this.codigo = codigo;
-		this.descricion = descricion;
+		this.descripcion = descricion;
 		this.destinatario = destinatario;
 		this.direccionDestinatario = direccion_destinatario;
-		this.camionero = camionero;
+		this.camionCamionero = camionero;
 		this.provincia = provincia;
 		
 	}
@@ -85,13 +86,15 @@ public class Paquete implements Serializable {
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
+	
+	
 
-	public String getDescricion() {
-		return descricion;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setDescricion(String descricion) {
-		this.descricion = descricion;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public String getDestinatario() {
@@ -110,14 +113,13 @@ public class Paquete implements Serializable {
 		this.direccionDestinatario = direccionDestinatario;
 	}
 
-	public Camionero getCamionero() {
-		return camionero;
+	public CamionCamionero getCamionCamionero() {
+		return camionCamionero;
 	}
 
-	public void setCamionero(Camionero camionero) {
-		this.camionero = camionero;
+	public void setCamionCamionero(CamionCamionero camionCamionero) {
+		this.camionCamionero = camionCamionero;
 	}
-	
 }
 
 	

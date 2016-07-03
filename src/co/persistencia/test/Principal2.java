@@ -1,12 +1,15 @@
 package co.persistencia.test;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import co.persistencia.entity.Camion;
+import co.persistencia.entity.CamionCamionero;
 import co.persistencia.entity.Camionero;
 import co.persistencia.entity.Paquete;
 import co.persistencia.entity.Provincia;
@@ -25,15 +28,21 @@ public class Principal2 {
 		
 		Provincia provincia = new Provincia("QR1","Queretaro1");
 		
-		Camionero camionero = new Camionero("uno","Tlaxcala", "23 33 44 56 ", 10000, "Pueblo","nada");
+		Camionero camionero = new Camionero("uno","Tlaxcala", "23 33 44 56 ", 10000, 500,"nada");
+		Camion camion = new Camion("Abc", 1, "muerte", 0.3 );
+		CamionCamionero camCam = new CamionCamionero( );
+		camCam.setCamion( camion );
+		camCam.setCamionero( camionero );
+		camCam.setFecha( new Date( ) );
+		
 		List<Paquete> paquetes = new ArrayList<Paquete> ();
 		
 		
-	paquetes.add(new Paquete("A001","Laptop Acer",
-				"Julio Pacheco ","direccion de julio",camionero,provincia));
+		paquetes.add( new Paquete("A001","Laptop Acer",
+				"Julio Pacheco ","direccion de julio", camCam ,provincia ) );
 	
-	paquetes.add(new Paquete("B001","gafas de sol",
-				"Carla Mora","direccion de carla",camionero ,provincia));
+		paquetes.add(new Paquete("B001","gafas de sol",
+				"Carla Mora","direccion de carla", camCam, provincia));
 		
 		//Creando un obj auxiliar
 	/*	Paquete paquete = new  Paquete();
@@ -69,12 +78,14 @@ public class Principal2 {
 		
 		
 		provincia.setPaquetes(paquetes);
-		camionero.setPaquetes(paquetes);
+		//camionero.setPaquetes(paquetes);
 		
 		
 		session.beginTransaction();
 		session.save(provincia);
-		session.save(camionero);
+		session.getTransaction( ).commit( );
+		session.beginTransaction( );
+		session.save( camionero );
 		session.getTransaction().commit();
 		session.close();
 		sessionFactory.close();

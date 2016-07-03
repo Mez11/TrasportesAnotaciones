@@ -23,7 +23,7 @@ public class Principal {
 		Configuration configuration = new Configuration();
 		configuration.configure();
 		sessionFactory = configuration.buildSessionFactory();
-		//mETODO save guarda datos para la base de datos
+		//Metodo save guarda datos para la base de datos
 		Session session = sessionFactory.openSession();
 	
 		//Insertar un registro
