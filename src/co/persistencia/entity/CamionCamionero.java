@@ -69,6 +69,12 @@ public class CamionCamionero implements Serializable {
 		this.fecha = fecha;
 	}
 	
+	 //Construtor 
+	public CamionCamionero(int id) {
+		this.id=id;
+	} 
+	
+	
 	@Override
 	public String toString() {
 		return "CamionCamionero [id=" + id + ", camionero=" + camionero + ", camion=" + camion + ", fecha=" + fecha

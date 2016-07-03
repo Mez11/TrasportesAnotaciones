@@ -52,6 +52,11 @@ public class Paquete implements Serializable {
 		//do nothing Para instanciar uno por uno
 	}
 	
+	public Paquete(int id){
+		this.id =id;
+		
+	}
+	
 	public Paquete( String codigo, String descricion, String destinatario, String direccion_destinatario,
 			CamionCamionero camionero, Provincia provincia) {
 		this.codigo = codigo;

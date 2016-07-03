@@ -22,7 +22,7 @@ public class PrincipalCamionCamionero {
 		//METODO save guarda datos para la base de datos
 		Session session = sessionFactory.openSession();
 		
-		CamionCamionero cam = new CamionCamionero( );
+		CamionCamionero cam = new CamionCamionero( 1 ); //Cambio
 		cam.setFecha( new Date( ) );
 		
 		//Camion camion = new Camion( 1 );

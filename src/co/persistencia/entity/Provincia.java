@@ -38,10 +38,10 @@ public class Provincia  implements Serializable{
 	@Column(name="nombre")
 	private String nombre;
 	
-	@OneToMany (cascade = CascadeType.ALL)
-	@JoinColumn (name ="id_provincia")
+	//@OneToMany (cascade = CascadeType.ALL)
+	//@JoinColumn (name ="id_provincia")
 	//@IndexColumn (name ="id")
-	private List<Paquete> paquetes; 
+	//private List<Paquete> paquetes; 
 	
 	
 	public int getId() {
@@ -78,7 +78,9 @@ public class Provincia  implements Serializable{
 		this.nombre = nombre;
 	}
 
-	
+	public Provincia (int id){
+		this.id = id;
+	}
 	
 	public Provincia( String codigo, String nombre) {
 		super();
@@ -92,8 +94,5 @@ public class Provincia  implements Serializable{
 
 
 
-	public void setPaquetes(List<Paquete> paquetes2) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }
