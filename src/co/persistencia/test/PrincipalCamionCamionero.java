@@ -24,7 +24,7 @@ public class PrincipalCamionCamionero {
 		
 		CamionCamionero cam = new CamionCamionero( 1 ); //Cambio
 		cam.setFecha( new Date( ) );
-		
+	
 		//Camion camion = new Camion( 1 );
 		//camion.setId( 1 );
 		//Le estamos diciendo a Hibernate que la relacion la queremos

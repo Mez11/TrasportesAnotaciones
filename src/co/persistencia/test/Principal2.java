@@ -30,7 +30,7 @@ public class Principal2 {
 		
 		Camionero camionero = new Camionero("uno","Tlaxcala", "23 33 44 56 ", 10000, 500,"nada");
 		Camion camion = new Camion("Abc", 1, "muerte", 0.3 );
-		CamionCamionero camCam = new CamionCamionero( );
+		CamionCamionero camCam = new CamionCamionero(1 );
 		camCam.setCamion( camion );
 		camCam.setCamionero( camionero );
 		camCam.setFecha( new Date( ) );
@@ -77,7 +77,7 @@ public class Principal2 {
 		//Camionero id_camionero, Provincia provincia
 		
 		
-		provincia.setPaquetes(paquetes);
+		//provincia.setPaquetes(paquetes);
 		//camionero.setPaquetes(paquetes);
 		
 		
